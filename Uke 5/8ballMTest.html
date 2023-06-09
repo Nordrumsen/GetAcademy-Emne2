@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .size8ball{
+        height: 230px;
+    }
+</style>
+</head>
+<body>
+    
+    <div id="app"></div>
+
+    <script>
+    let answers = [
+        "Spør mora di",
+        "På tirsdag",
+        "Dette hørtes ikke bra ut",
+        "Jeg synes du skal gå for det",
+        "Aldri i verden",
+        ]
+    let okok = document.getElementById('app').innerHTML;
+    let showAnswer = 'font';
+        
+
+        updateView()
+        function updateView(){
+            // let html = '';
+            okok = /*html*/ `
+            <div>Spør den magiske 8 ballen: <input onchange="typedQuestion(this)" type="text"> </div>
+            <!--<button onclick="typedQuestion()">Spør</button>-->
+            <div id="${showAnswer}"></div>
+            `;
+        }
+        function typedQuestion(question){
+            for(let i = 0; i < answers.length; i++){
+                let rndNum = Math.floor(Math.random() * answers.length);
+                
+            }
+            showAnswer += answers[rndNum];
+            answers.splice(rndNum, 1);
+            updateView()
+
+
+            //let rndNum = Math.floor(Math.random()*answers.length);
+            //document.getElementById('showAnswer').innerHTML = answers[rndNum];
+        }
+</script>
+</body>
+</html>

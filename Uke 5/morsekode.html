@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        const app = document.getElementById("app");
+        const alfabet = "abcdefghijklmnopqrstuvwxyz æøå";
+        const morsekodeAlfabet =  [ '.-', '-...', '-.-.', '-..', '.', '..-.', '--.', '....',
+            '..', '.---', '-.-', '.-..', '--', '-.', '---', '.--.',
+            '--.-', '.-.', '...', '-', '..-', '...-', '.--', '-..-',
+            '-.--', '--..', ' ', '·−·−', '−−−·', '·−−·−']; //4 siste er space, æ ,ø og å
+        let input = " ";
+        let output = " ";
+
+        updateView();
+
+        function updateView(){
+            app.innerHTML = /*HTML*/ `
+                Gjør om til morse (trykk enter)
+                <input type="text" onchange="enter(this)">
+                <div id="tekst">
+                    ${input}
+                    <p>${output}</p>     
+                </div>
+            `;  
+        }
+
+        function enter(element){
+            input = element.value.toUpperCase();
+
+            for(let i = 0; i < element.value.length; i++){
+                let bokstav = element.value[i].toUpperCase(); //store bokstaver, 'toLowerCase()' små bokstaver
+                let bokstavIndex = alfabet.toUpperCase().indexOf(bokstav);
+                output += morsekodeAlfabet[bokstavIndex] + " ";
+            }
+            updateView();
+            output = "";
+        }
+
+    </script>
+</body>
+</html>

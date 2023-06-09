@@ -1,0 +1,144 @@
+button{
+    cursor: pointer;
+    }
+/* UNIVERSAL */
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-size: small;
+}
+
+/* NAVIGATION BAR CSS */
+
+.navBar {
+    display: flex;
+    grid-template-rows: auto;
+    background: rgb(255, 128, 0);
+    height: auto;
+    justify-content: left;
+  
+
+    font-weight: 500;
+    font-size: 20px;
+   
+    text-align: center;
+    box-shadow: black 0px 0px 10px;
+}
+
+.navBarItem {
+    margin: 7px 30px 7px 7px;
+    padding: 5px;
+    background: #EEEEEE;
+    border-radius: 5px;
+    max-height: 50px;
+    box-shadow: 0px 4px 4px #F44E01;
+    user-select: none;
+    border: none;
+    text-align: center;
+}
+.logOutBtn {
+    justify-self: end;
+}
+.navBarItem:hover {
+    box-shadow: none;
+    background: #8e8e8e;
+
+}
+.navBarItem:active {
+    background: #919191;
+    color: white;
+}
+
+.navBarUser {
+    margin: 7px 30px 7px 7px;
+    padding: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 0px;
+    padding-bottom: 13px;
+}
+.navBarUserClassIDUser {
+    text-transform: uppercase;
+    position: relative;
+    top:-12px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0px;
+    color: darkorange;
+    padding: 0px;
+    padding-bottom: 2px;
+    height: 1px;
+}
+.navBarUserClassIDAdmin {
+    text-transform: uppercase;
+    position: relative;
+    top:-12px;
+    font-weight: bolder;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 0px;
+    color: darkorchid;
+    padding: 0px;
+    padding-bottom: 2px;
+    height: 1px;
+}
+
+/* LOGIN PAGE CSS */
+.loginPageHeader {
+    display: flex;
+    width: auto;
+    justify-content: center;
+
+    font-family: 'Monofett', cursive;
+    font-size: 40px;
+    background: rgb(255, 128, 0);
+    color: black;
+}
+.loginPageUndertittel{
+    display:flex;
+    padding-top:20px;
+    padding-bottom:40px;
+    justify-content: center; 
+    font-weight: bolder;
+}
+
+#loginPageView{
+    justify-content: center;
+
+    width: auto;
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    min-width: 310px;
+
+    padding-bottom:25px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.loginPageBtns, .loginPageInputs {
+    text-align: center;
+    margin:auto;
+    border-radius: 13px;
+}
+.loginPageInputs {
+    box-shadow: 0px 4px 4px rgb(87, 87, 87);
+    border:1px solid black;
+}
+.loginPageInputs:focus {
+    box-shadow: 0px 4px 4px rgb(255, 128, 0);
+}
+.loginPageBtns {
+    box-shadow: 0px 4px 4px rgb(87, 87, 87);
+    border:1px solid black;
+}
+.loginPageBtns:hover {
+    background: rgb(255, 128, 0);
+    box-shadow: 0px 4px 4px rgb(255, 128, 0);
+    color: white;
+}

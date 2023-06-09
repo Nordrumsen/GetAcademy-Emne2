@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handleliste</title>
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        //model
+        let inputVerdi = ''
+        let handleliste = ['Lefse', 'Ost', 'Kjøttdeig', 'Tacokrydder', 'Agurk', 
+                           'Paprika', 'Løk', 'Mais', 'Salsa', 'Nachos', 'Guacamole']
+         
+
+        //view
+        vis();
+        function vis(){
+            let html = '';
+
+            for (let i = 0; i < handleliste.length; i++){
+                html += /*HTML*/`
+                <li>
+                    ${handleliste[i]}
+                    <button onclick="endreVare(${i})">Endre Vare</button>
+                    <button onclick="slettVare(${i})">Slett Vare</button>                
+                </li> `
+            }   
+
+            html += /*HTML*/`
+            <input oninput="inputVerdi = this.value" type="text">
+            <button onclick="leggTilVare()">Legg Til Vare</button>
+            `
+            
+            document.getElementById('app').innerHTML = html;
+        }
+
+
+        //controller
+        function leggTilVare(){
+            handleliste.push(inputVerdi);
+            inputVerdi = '';
+            vis();
+        }
+        
+        function slettVare(index){
+            handleliste.splice(index, 1);
+            vis();
+        }
+        
+        function endreVare(index){
+            handleliste[index] = inputVerdi;
+            vis();
+        }
+
+        
+
+        
+    </script>
+</body>
+</html>

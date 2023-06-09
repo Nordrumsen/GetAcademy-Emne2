@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    .bilder{
+        
+    }
+</style>
+
+</head>
+<body>
+    <div id="app"></div>
+    
+    <script>
+        //MODEL
+        // let myNum = 1;
+        let myNum = Math.floor(Math.random()*5);
+
+        //VIEW
+        updateView()
+        function updateView(){
+            document.getElementById('app').innerHTML= /*HTML*/`
+            <button onclick="updateView()">Klikk</button>`
+            velgBilde();
+        }
+
+        function velgBilde(){
+            if(myNum == 0){
+                document.getElementById('app').innerHTML = /*HTML*/`
+                <div id='box1' class="bilder"><button onclick="updateView()">Klikk</button><img src="0.png" width="350px" alt=""></div> `
+            }
+            else if(myNum == 1){
+                document.getElementById('app').innerHTML = /*HTML*/`
+                <div id='box1' class="bilder"><button onclick="updateView()">Klikk</button><img src="1.png" width="330px" alt=""></div> `
+            }
+            else if(myNum == 2){
+                document.getElementById('app').innerHTML = /*HTML*/`
+                <div id='box1' class="bilder"><button onclick="updateView()">Klikk</button><img src="2.png" width="330px" alt=""></div> `
+            }
+            else if(myNum == 3){
+                document.getElementById('app').innerHTML = /*HTML*/`
+                <div id='box1' class="bilder"><button onclick="updateView()">Klikk</button><img src="3.png" width="350px" alt=""></div> `
+            }
+            else{
+                document.getElementById('app').innerHTML = /*HTML*/`
+                <div id='box1' class="bilder"><button onclick="updateView()">Klikk</button><img src="4.png" width="350px" alt=""></div> `
+            } 
+        }
+
+        //CONTROLLER
+
+
+        
+    </script>
+</body>
+</html>

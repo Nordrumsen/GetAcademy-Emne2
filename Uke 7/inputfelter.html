@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    li{
+        list-style-type: none;
+        font-size: 16pt;
+    }
+    .form{
+        margin: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 400px;
+        background: #D8F1F8;
+        border: 1px solid silver;
+    }
+    .form h2{
+        margin-left: 40px;
+    }
+    input {
+        font-size: 20pt;
+    }
+    input:focus, textarea:focus{
+        background-color: lightyellow;
+    }
+    input submit{
+        font-size: 12pt;
+    }
+    .ragequit{
+        color: red;
+        font-size: 10pt;
+        margin-left: 10pt;
+    }
+
+</style>
+
+<body onload="document.register.email.focus()">
+    <div id="app"></div>
+
+    <script>
+        //registringsside
+        //<form>
+            //<input---
+            //<input---
+            //<input---
+            //<input type="submit" onlick=funksjonenmin()---
+        updateView()
+        function updateView(){
+            document.getElementById('app').innerHTML = /*HTML*/ `
+            <div class="form">
+                <h2>Register</h2>
+                <form name="register">
+                    <ul>
+                        <li><input type="text" name="email"></li>
+                        <br>
+                        <li><input type="password" name="password"></li>
+                        <br>
+                        <li><input type="date" name="birthdate"></li>
+                        <br><br><br>
+                        <li><input type="submit" name="submit" value="Submit" onclick="validateInputs(document.register)"><input class="ragequit" type="reset"></li>
+                    </ul>
+                </form>
+            </div>
+            `;
+        }
+
+        function validateInputs(form){
+            
+            if (!validateEmail(form.email)){
+                alert("Det der er da for faen ikke noen email...");
+                return;
+            }
+
+            if(!validatePassword(form.password)){
+                alert("Dårlig passord, jeg hadde hacka deg på 0.5 sekunder blank.");
+                return;
+            }
+
+            alert("Bra jobba");
+            return;
+        }
+
+        function validateEmail(email){
+            let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; //verifiser at emailen har riktig format
+            if (email.value.match(emailRegex)) return true;
+            return false;
+        }
+
+        function validatePassword(password){ //                        ______ ÆØÅæøå
+            let passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9ÆØÅæøå!@#$%^&*]{6,16}$/; //1 spesialtegn, 1 tall, mellom 6 og 16 tegn langt 
+            if(password.value.match(passwordRegex)) return true;
+            return false;
+        }
+
+        function validateAge(dateofbirth){
+            //trenger ikke regex her
+            //sjekk brukern er over 18 år
+            //hint: date.now() er i millisekunder, så du må dele på 31556952000 for å få i år
+        }
+    </script>
+</body>
+</html>

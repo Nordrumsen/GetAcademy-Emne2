@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        let inputVerdi = ''
+        let handleliste = ['Brød', 'Melk', 'Ost', 'Smør', 'Skinke']
+
+        vis()
+        function vis(){
+            let html = ''
+
+            for(let i = 0; i < handleliste.length; i++){
+                html+= /*HTML*/`  
+                <li>  
+                    ${handleliste[i]}
+                    <button onclick="endreVare(${i})">Endre vare</button>
+                    <button onclick="slettVare(${i})">Fjern vare</button>
+                </li>`;
+            }
+
+            html += /*HTML*/`
+            <input oninput="inputVerdi = this.value" type="text">
+            <button onclick="leggTilVare()">Legg til vare</button>
+            `
+            document.getElementById('app').innerHTML = html;
+        }
+
+        function leggTilVare(){
+            handleliste.push(inputVerdi);
+            inputVerdi = '';
+            vis();
+        }
+
+        function slettVare(index){
+            handleliste.splice(index, 1);
+            vis();
+        }
+
+        function endreVare(index){
+            handleliste[index] = inputVerdi;
+            vis();
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .size8ball{
+        height: 230px;
+    }
+</style>
+</head>
+<body>
+    
+    <div id="app"></div>
+
+    <script>
+    let answers = ['Ja, det kan funke', 'JAA', 'Absolutt', 'Usikker',
+                   'Prøv igjen','Nei', 'Tror ikke det', 'Det ser lyst ut', 
+                   'Det ser mørkt ut', 'Trolig', 'Positivt', 'Negativt'];
+        
+
+        updateView()
+        function updateView(){
+            // let html = '';
+            document.getElementById('app').innerHTML = /*html*/ `
+            <img class="size8ball" src="bilder/Magic 8 ball.png" alt="">
+            <div>Spør den magiske 8 ballen: <input onchange="typedQuestion(this)" type="text"> </div>
+            <!--<button onclick="typedQuestion()">Spør</button>-->
+            <div id="showAnswer"></div>
+            `;
+        }
+        function typedQuestion(question){
+            let rndNum = Math.floor(Math.random()*answers.length);
+            document.getElementById('showAnswer').innerHTML = answers[rndNum];
+
+            // let svarTekst = answers.length > 0 ? answers[rndNum]
+            //updateView()
+        }
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .ball8 {
+            height: 500px;
+            width: 500px;
+            border-radius: 50%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .whiteCircle {
+            background-color: white;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0 0 10px black;
+        }
+
+        .font {
+            font-size: 150px;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        let svar = ['Ja, det kan funke', 'JAA', 'Absolutt', 'Usikker',
+                    'Prøv igjen','Nei', 'Tror ikke det', 'Det ser lyst ut', 
+                    'Det ser mørkt ut', 'Trolig', 'Positivt', 'Negativt'];
+        let answer = '8';
+        let classFont = 'font';
+
+        updateView()
+        function updateView(){
+            let html = '';
+            html += /*HTML*/ `
+            <div class="ball8">
+                <div class="whiteCircle" onclick="getRandomAnswer()">
+                    <div class="${classFont}">${answer}</div>
+                </div>
+            </div>
+            `
+            document.getElementById('app').innerHTML = html
+        }
+
+        function getRandomAnswer(){
+            let randomIndex = Math.floor(Math.random() * svar.length)
+            let svarTxt = svar.length > 0 ? svar[randomIndex] : 'Legg på mer penger'
+            classFont = '';
+            answer = svarTxt;
+            svar.splice(randomIndex, 1);
+            updateView();
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random img</title>
+
+    <style>
+        .bilder {
+            background-color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script>
+        function updateView() {
+            document.getElementById('app').innerHTML = /*html*/`
+        
+        <div id='bilde1' class="bilder" onclick="velgBilde(this)">Bilde
+        </div>
+
+        <div id='bilde2' class="bilder" onclick="velgBilde(this)">Bilde
+        <img src="Pomme.jpg " width="134">
+        </div>
+
+        <div id='bilde3' class="bilder" onclick="velgBilde(this)">Bilde
+        <img src="hest.jpg" width="160">
+        </div>
+
+        <div id="tom"></div>
+        `
+        };
+
+        function rnd() {
+            //hver gang du skal starte Math må starte med stor M
+            let nummer = Math.floor(Math.random() * 3)
+            if (nummer == 0) {
+                document.getElementById('bilde1').innerHTML = <img src="katt.jpg" width="200">
+            }
+        }
+
+        /* function vetIkke() {
+            //if parentes= hva "regelen" er. If {} hva som skal skje.
+            if () { }
+        } */
+
+        /* function velgBilde(parameter){
+            document.getElementById('').innerHTML.parameter.id
+        };
+
+        if (parameter == 'bilde'){
+
+        } */
+    </script>
+</body>
+
+</html>

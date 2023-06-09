@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        //Vis frem en liste av 3 personer. Ex Bernt, Egil, Svein. 
+        //Lag et inputfelt som kan legge til en ny person til listen. 
+        //Lag en knapp som fjerner en random person fra listen.
+
+        let personer = ['Knut', 'Kåre', 'Per', 'Petter', 'Josef']
+        let inputVerdi = ''
+
+        updateView()
+        function updateView(){
+            let html = ''; 
+            
+            for(let i = 0; i < personer.length; i++){
+                html += /*HTML*/`
+                <li>
+                ${personer[i]}
+                <button onclick="endreNavn(${i})">Endre Navn</button>
+                <button onclick="slettEnPerson(${i})">X</button>
+                </li>
+                `;
+            }
+            html += /*HTML*/`
+            <input oninput="inputVerdi = this.value" type="text">
+            <button onclick="leggTilNy()">Legg til</button>
+            <button onclick="fjernRandomPerson()">Fjern en random person</button>
+            `
+            document.getElementById('app').innerHTML = html
+        }
+
+        function fjernRandomPerson(){
+            let x = Math.floor(Math.random()*personer.length);
+            personer.splice(x, 1);
+            updateView()
+        }
+
+        function endreNavn(index){
+            personer[index] = inputVerdi;
+            inputVerdi = ''
+            updateView()
+        }
+
+        function leggTilNy(){
+            personer.push(inputVerdi);
+            inputVerdi = '';
+            updateView()
+        }
+
+        function slettEnPerson(index){
+            personer.splice(index, 1);
+            updateView()
+        }
+    </script>
+</body>
+</html>

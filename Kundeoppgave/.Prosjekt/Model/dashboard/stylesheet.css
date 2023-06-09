@@ -1,0 +1,168 @@
+button{
+    cursor: pointer;
+    }
+/* UNIVERSAL */
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* NAVIGATION BAR CSS */
+
+.navBar {
+    
+    display: flex;
+    grid-template-rows: auto;
+    background: rgb(255, 128, 0);
+    height: auto;
+    border-bottom: 1px solid black;
+
+
+    /* box-shadow: black 0px 0px 10px; */
+}
+.logOutBtn {
+    margin:auto;    
+}
+
+.navBarItem {
+    text-transform: uppercase;
+    user-select: none;
+    text-align: center;
+    margin-right:25px;
+    margin:auto;
+    padding: 5px;
+    
+    border-radius: 5px;
+    box-shadow: none;
+    border:1px solid black;
+}
+.navBarItem:hover {
+    box-shadow: 0px 4px 4px rgb(87, 87, 87);
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.807);
+    color:rgb(255, 128, 0);
+
+}
+.navBarItem:active {
+    background: #919191;
+    color: white;
+}
+.navBarLogo {
+    text-transform: uppercase;
+    user-select: none;
+    font-size: xx-large;
+    text-align: center;
+    margin-right:25px;
+    margin:auto;
+    padding: 5px;
+    
+    border-radius: 5px;
+    box-shadow: none;
+}
+.navBarLogo:hover {
+    cursor: pointer;
+    color:white;
+
+}
+.navBarLogo:active {
+    color: white;
+}
+
+.navBarUser {
+    margin: 7px 7px 7px 7px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 0px;
+    padding-bottom: 13px;
+}
+.navBarUserClassIDUser {
+    font-size: 14px;
+    font-weight: 800;
+    font-style: italic;   
+    text-transform: uppercase;
+    text-align: center;
+
+    position: relative;
+    top:-20px;
+    margin-top: 0px;
+    color: #91d1ff;
+    padding: 0px;
+    padding-bottom: 2px;
+    height: 1px;
+    text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px, rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px, rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px;}
+.navBarUserClassIDAdmin {
+    font-size: 14px;
+    font-weight: 800;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: center;
+
+    position: relative;
+    top:-20px;
+    margin-top: 0px;
+    color: rgb(255, 164, 53);
+    padding: 0px;
+    padding-bottom: 2px;
+    height: 1px;
+    text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px, rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px, rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px;
+}
+
+/* LOGIN PAGE CSS */
+.loginPageHeader {
+    display: flex;
+    width: auto;
+    justify-content: center;
+
+    font-family: 'Monofett', cursive;
+    font-size: 40px;
+    background: rgb(255, 128, 0);
+    color: black;
+}
+.loginPageUndertittel{
+    display:flex;
+    padding-top:20px;
+    padding-bottom:40px;
+    justify-content: center; 
+    font-weight: bolder;
+}
+
+#loginPageView{
+    justify-content: center;
+
+    width: auto;
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    min-width: 310px;
+
+    padding-bottom:25px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.navBarLogo{
+    font-family: 'Monofett', cursive;
+}
+.loginPageBtns, .loginPageInputs {
+    text-align: center;
+    margin:auto;
+    border-radius: 13px;
+}
+.loginPageInputs {
+    box-shadow: 0px 4px 4px rgb(87, 87, 87);
+    border:1px solid black;
+}
+.loginPageInputs:focus {
+    box-shadow: 0px 4px 4px rgb(255, 128, 0);
+}
+.loginPageBtns {
+    box-shadow: 0px 4px 4px rgb(87, 87, 87);
+    border:1px solid black;
+}
+.loginPageBtns:hover {
+    background: rgb(255, 128, 0);
+    box-shadow: 0px 4px 4px rgb(255, 128, 0);
+    color: white;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario spill</title>
+    <style>
+        body{
+            background-color: rgba(167, 247, 203, 0.882);
+        }
+       
+       img{
+            height: 130px;
+            width: 100px;
+        }
+        .overskrift{
+            color: rgb(10, 96, 96);
+        }
+
+        button{
+            font-size: 12px;
+            background-color:rgb(252, 82, 63);
+            border: 2px solid rgb(101, 21, 5);
+            border-radius: 90%;
+            padding: 0px;
+            width: 80px;
+            height: 34px;
+            text-align: center;
+        }
+
+        .rnd{
+            font-size: 12px;
+            background-color:rgb(180, 119, 232);
+            border: 2px solid rgb(88, 48, 114);
+            border-radius: 90%;
+            padding: 0px;
+            width: 80px;
+            height: 34px;
+            text-align: center;
+        }
+
+        .start{
+            font-size: 12px;
+            background-color:rgb(153, 232, 119);
+            border: 2px solid rgb(56, 104, 43);
+            border-radius: 90%;
+            padding: 0px;
+            width: 80px;
+            height: 34px;
+            text-align: center;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+    
+             <div> 
+                <h2 class="overskrift">Super Mario</h2>
+                <img onclick="figth" src="bowser.png"> 
+                <button onclick="figth()">Figth</button>
+
+            </div>
+
+            <div>
+                <h4 class="overskrift">Velg din karakter:</h4>
+                <img id="mario" src="mario.png" onclick="velgKarakter()">
+                <img id="luigi" src="luigi.png" onclick="velgKarakter()">
+                <img id="peach" src="peach.png" onclick="velgKarakter()">
+                <img id="yoshi" src="yoshi.png" onclick="velgKarakter()">
+
+            <button class="rnd" onclick="rndKlikk()">Random</button>
+            <button class="start" onclick="startFigth()">Start Figth</button>
+            <button onclick="angrip()">Figth</button>
+            </div>
+
+   
+
+    <script>
+        //select character
+        //hp (bowser 300) (mario 200) (luigi 140) (peach 100) (yoshi 80)
+        //knapp for bowser til å angripe
+        //knapp for den valgte karrakter mot bowser
+        //vise stats
+        
+        let karakter = ['Mario', 'Luigi', 'Peach', 'Yoshi']
+
+        updateView()
+        function updateView(){
+            document.getElementById('app').innerHTML = html /*HTML*/ `
+            <div> 
+                <h2 class="overskrift">Super Mario</h2>
+                <img onclick="figth" src="bowser.png"> 
+                
+            </div>
+
+            <div>
+                <h4>Velg din karakter</h4>
+                <img id="mario" src="mario.png" onclick="velgKarakter(${0})">
+                <img id="luigi" src="luigi.png" onclick="velgKarakter(${1})">
+                <img id="peach" src="peach.png" onclick="velgKarakter(${2})">
+                <img id="yoshi" src="yoshi.png" onclick="velgKarakter(${3})">
+
+                <button class="rnd" onclick="rndKlikk()">Random</button>
+                <button class="start" onclick="startFigth()">Start Figth</button>
+                
+            </div>
+            `;
+        }
+
+        function velgKarakter(i){
+            
+            if(i = 0; [0]){
+
+            }
+        }
+
+        function startFigth(){
+            document.getElementById('app').innerHTML = html /*HTML*/ `
+            <button onclick="figth()">Figth</button>
+            <button onclick="angrip()">Figth</button>
+            `
+            
+        }
+
+    </script>
+</body>
+</html>
